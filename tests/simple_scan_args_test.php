@@ -20,7 +20,7 @@ FUnit::test("simple_scan_args()", function(){
 	);
 
 	$output = simple_scan_args($input,
-		array("key1", "key2", "key3", "key4"),
+		array("key1", "key2", "key3", "key4", "key5"),
 		array("f1", "f2", "f3", "flag1", "flag2", "flag3")
 	);
 
