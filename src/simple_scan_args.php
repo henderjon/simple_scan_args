@@ -13,30 +13,29 @@
  * @param array $flags The keys that should NOT have a value ... booleans
  * @return array
  */
-if( !function_exists("simple_scan_args") ){
-	function simple_scan_args(array $_argv, array $values, array $flags = array()){
 
-		// $values = array_fill_keys($values, false);
-		$final = array_fill_keys($flags, false);
+function simple_scan_args(array $_argv, array $values, array $flags = array()){
 
-		while( $arg = array_shift($_argv) ){
-			$arg = trim($arg, " -");
+	// $values = array_fill_keys($values, false);
+	$final = array_fill_keys($flags, false);
 
-			if(false !== ($pos = strpos($arg, "="))){
-				$key         = substr($arg, 0, $pos);
-				$final[$key] = substr($arg, ($pos + 1));
-				continue;
-			}
+	while( $arg = array_shift($_argv) ){
+		$arg = trim($arg, " -");
 
-			if( in_array($arg, $values) ){
-				$final[$arg] = array_shift($_argv);
-				continue;
-			}
-			if( in_array($arg, $flags) ){
-				$final[$arg] = true;
-				continue;
-			}
+		if(false !== ($pos = strpos($arg, "="))){
+			$key         = substr($arg, 0, $pos);
+			$final[$key] = substr($arg, ($pos + 1));
+			continue;
 		}
-		return $final;
+
+		if( in_array($arg, $values) ){
+			$final[$arg] = array_shift($_argv);
+			continue;
+		}
+		if( in_array($arg, $flags) ){
+			$final[$arg] = true;
+			continue;
+		}
 	}
+	return $final;
 }
