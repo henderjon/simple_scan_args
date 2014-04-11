@@ -32,6 +32,7 @@ function simple_scan_args(array $_argv, array $values, array $flags = array()){
 			$final[$arg] = array_shift($_argv);
 			continue;
 		}
+
 		if( in_array($arg, $flags) ){
 			$final[$arg] = true;
 			continue;
