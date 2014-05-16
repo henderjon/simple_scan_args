@@ -4,30 +4,23 @@ simple_scan_args is a CLI function that will parse an array for -flags and
 -key=value pairs. It supports the following syntax: "-f" "-flag" "-key=value"
 "-key value". Using one or more dashes has no effect.
 
-# Usage
+# usage
 
 $args = simple_scan_args($_SERVER["argv"], array $keys, array $flags);
 
-# Installation
+# installation
 
-Install the [Packagist archive](https://packagist.org/packages/henderjon/simple_scan_args)
-using [Composer](http://getcomposer.org/). I will *generally* respect
-[Semantic Versioning](http://semver.org/). Learn about how Composer
-does [versions](https://getcomposer.org/doc/01-basic-usage.md#package-versions).
+Using [composer](http://getcomposer.org/) `"require" : { "henderjon/simple_scan_args": "1.*" }`
 
-*Note the absense of v1.0*
-
-```
-{
-	"require" : {
-		"henderjon/simple_scan_args": "0.1.*"
-	}
-}
-```
-
-# License
+# license
 
 See LICENSE.md for the [BSD-3-Clause](http://opensource.org/licenses/BSD-3-Clause) license.
+
+## links
+
+  - The [Packagist archive](https://packagist.org/packages/henderjon/simple_scan_args)
+  - Reading on [Semantic Versioning](http://semver.org/)
+  - Reading on[Composer Versioning](https://getcomposer.org/doc/01-basic-usage.md#package-versions)
 
 
 
